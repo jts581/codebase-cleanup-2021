@@ -17,13 +17,13 @@ def determine_winner(u,c):
         return u
     elif u == "paper" and c == "rock":
         #print("The computer wins")
-        return c
+        return u
     elif u == "paper" and c == "paper":
         #print("It's a tie!")
         return None
     elif u == "paper" and c == "scissors":
         #print("The user wins")
-        return u
+        return c
 
     elif u == "scissors" and c == "rock":
         #print("The computer wins")
@@ -35,14 +35,6 @@ def determine_winner(u,c):
         #print("It's a tie!")
         return None
     
-    winner = determine_winner(u,c)
-    if winner == u:
-        print("YOU WON")
-    elif winner == c:
-        print("COMPUTER WON")
-    else:
-        print("It's a tie")
-
 # but we don't want to add anything else to the global scope
 # only run the stuff inside this conditional if we're running this app from the command line
 # ... otherwise don't try to import it
@@ -65,5 +57,11 @@ if __name__ == "__main__":
     c = choice(["rock", "paper", "scissors"])
     print("COMPUTER CHOICE:", c)
 
-
+    winner = determine_winner(u,c)
+    if winner == u:
+        print("YOU WON")
+    elif winner == c:
+        print("COMPUTER WON")
+    else:
+        print("It's a tie")
 
